@@ -1,142 +1,123 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy 8/3</title>
+<title>Nguyễn Phương Vi</title>
 
 <style>
-
 body{
-margin:0;
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-font-family:Arial;
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-text-align:center;
-padding:20px;
+ margin:0;
+ height:100vh;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ font-family:Arial;
+ background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+ text-align:center;
+ padding:20px;
 }
-
-/* ẩn ban đầu */
 
 .hidden{
-opacity:0;
-transform:translateY(20px);
-transition:1s;
+ opacity:0;
+ transform:translateY(20px);
+ transition:1s;
 }
-
-/* hiện */
 
 .show{
-opacity:1;
-transform:translateY(0);
+ opacity:1;
+ transform:translateY(0);
 }
-
-/* nút */
 
 button{
-padding:14px 28px;
-font-size:16px;
-border:none;
-border-radius:30px;
-background:white;
-color:#ff4d6d;
-cursor:pointer;
-margin-bottom:25px;
-animation:blink 1.2s infinite;
+ padding:14px 28px;
+ font-size:16px;
+ border:none;
+ border-radius:30px;
+ background:white;
+ color:#ff4d6d;
+ cursor:pointer;
+ margin-bottom:25px;
+ animation:blink 1.2s infinite;
 }
-
-/* hiệu ứng nhấp nháy */
 
 @keyframes blink{
-0%{transform:scale(1);}
-50%{transform:scale(1.08);}
-100%{transform:scale(1);}
+ 0%{transform:scale(1);}
+ 50%{transform:scale(1.08);}
+ 100%{transform:scale(1);}
 }
-
-/* thẻ tên */
 
 .name-card{
-padding:15px 25px;
-font-size:28px;
-color:white;
-border-radius:20px;
-background:rgba(255,255,255,0.2);
-backdrop-filter:blur(10px);
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
-margin-bottom:25px;
+ padding:15px 25px;
+ font-size:28px;
+ color:white;
+ border-radius:20px;
+ background:rgba(255,255,255,0.2);
+ backdrop-filter:blur(10px);
+ box-shadow:0 10px 25px rgba(0,0,0,0.2);
+ margin-bottom:25px;
 }
-
-.name-card span{
-background:linear-gradient(45deg,#fff,#ffe6f0);
--webkit-background-clip:text;
-color:transparent;
-font-weight:bold;
-letter-spacing:2px;
-}
-
-/* ảnh tròn */
 
 .avatar{
-width:160px;
-height:160px;
-border-radius:50%;
-object-fit:cover;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
-margin-bottom:25px;
+ width:160px;
+ height:160px;
+ border-radius:50%;
+ object-fit:cover;
+ box-shadow:0 10px 30px rgba(0,0,0,0.3);
+ margin-bottom:25px;
 }
-
-/* lời chúc */
 
 .message{
-color:white;
-font-size:18px;
-max-width:320px;
-line-height:1.6;
+ color:white;
+ font-size:18px;
+ max-width:320px;
+ line-height:1.6;
 }
 
+/* span xanh nhấp nháy */
+.highlight{
+ display:inline-block;
+ font-size:22px;
+ color:#398a20;
+ margin-top:10px;
+ animation:blink 1.2s infinite;
+ /* text-shadow:0 0 8px #00e6a8, 0 0 16px #00e6a8; */
+}
 </style>
-
 </head>
 
 <body>
 
-<button id="btn" onclick="showContent()">Bấm vào đây nhé</button>
+<button id="btn">Bấm vào đây nhé</button>
 
 <div class="name-card hidden" id="name">
-<span>Nguyễn Thị Huyền</span>
+ <span>Nguyễn Phương Vi</span>
 </div>
 
-<img src="H.jpg" class="avatar hidden" id="photo">
+<img src="v.jpg" class="avatar hidden" id="photo">
 
 <div class="message hidden" id="msg">
-Chúc em một ngày 8/3 thật vui 🌸 <br><br>
+Thời tiết bảo mưa kìa - Nhỡ mai - kia mưa đó, mưa đó 😐
 
-Chúc em luôn xinh đẹp, nhiều niềm vui  
-và gặp thật nhiều điều tốt đẹp trong cuộc sống ❤️ <br><br>
+<img style="height:100px;" src="t.png"><br>
 
-Anh rất thích nói chuyện với em.  
-Hy vọng chúng ta sẽ có thêm nhiều kỷ niệm cùng nhau. <br><br>
+Anh muốn mang kẹo dừa nướng cho em lắm lắm 🥲 
 
-PS: Những dòng này là anh search trên mạng 😅
+<span class="highlight">
+=> Thế nên là: Tối anh xuống đưa kẹo cho em nhe nhé <==
+</span>
+</div>
 
 <script>
+document.getElementById("btn").onclick = function(){
+ document.getElementById("name").classList.add("show");
+ document.getElementById("photo").classList.add("show");
+ document.getElementById("msg").classList.add("show");
 
-function showContent(){
-
-document.getElementById("name").classList.add("show");
-document.getElementById("photo").classList.add("show");
-document.getElementById("msg").classList.add("show");
-
-document.getElementById("btn").innerText="🍀Happy 8/3 😉";
-
+ this.innerText = "🍀Đi mừ, Đi mò 😉";
 }
-
 </script>
 
 </body>
